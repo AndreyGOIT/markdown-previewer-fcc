@@ -39,16 +39,28 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <textarea
-        id="editor"
-        value={editorText}
-        onChange={handleChange}
-      ></textarea>
-      <div
-        id="preview"
-        dangerouslySetInnerHTML={{ __html: marked(editorText) }}
-      ></div>
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Markdown Previewer</h1>
+      <div className="row">
+        <div className="col-md-6 mb-3">
+          <h5 className="mb-3">Editor</h5>
+          <textarea
+            id="editor"
+            className="form-control"
+            rows="20"
+            value={editorText}
+            onChange={handleChange}
+          ></textarea>
+        </div>
+        <div className="col-md-6 mb-3">
+          <h5 className="mb-3">Preview</h5>
+          <div
+            id="preview"
+            className="border p-3 bg-light"
+            dangerouslySetInnerHTML={{ __html: marked(editorText) }}
+          ></div>
+        </div>
+      </div>
     </div>
   );
 }
