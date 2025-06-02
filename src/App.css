@@ -3,12 +3,12 @@
   background-color: #a5ddf8;
 }
 #editor {
-  width: 50%;
-  height: 50vh;
+  width: 100%;
+  height: 100vh;
   background-color: aquamarine;
 }
 #preview {
-  width: 50%;
+  width: 100%;
   height: 100vh;
   background-color: aquamarine;
   overflow: scroll;

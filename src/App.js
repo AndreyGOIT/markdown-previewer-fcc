@@ -44,13 +44,15 @@ function App() {
       <div className="row">
         <div className="col-md-6 mb-3">
           <h5 className="mb-3">Editor</h5>
-          <textarea
-            id="editor"
-            className="form-control"
-            rows="20"
-            value={editorText}
-            onChange={handleChange}
-          ></textarea>
+          <div className="border p-3 bg-light">
+            <textarea
+              id="editor"
+              className="form-control"
+              rows="20"
+              value={editorText}
+              onChange={handleChange}
+            ></textarea>
+          </div>
         </div>
         <div className="col-md-6 mb-3">
           <h5 className="mb-3">Preview</h5>
