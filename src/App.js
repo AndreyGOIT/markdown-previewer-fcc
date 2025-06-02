@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { marked } from "marked";
 import "./App.css";
 
 const defaultMarkdown = `
@@ -26,6 +27,10 @@ function example() {
 ![FreeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 `;
 
+marked.setOptions({
+  breaks: true,
+});
+
 function App() {
   const [editorText, setEditorText] = useState(defaultMarkdown);
 
@@ -40,7 +45,10 @@ function App() {
         value={editorText}
         onChange={handleChange}
       ></textarea>
-      <div id="preview">{editorText}</div>
+      <div
+        id="preview"
+        dangerouslySetInnerHTML={{ __html: marked(editorText) }}
+      ></div>
     </div>
   );
 }
